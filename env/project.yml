@@ -14,9 +14,6 @@ engines:
     menu_favourites: []
   tk-desktop:
     apps:
-      tk-multi-jpegapp:
-        location: {name: tk-multi-jpegapp, path: /Users/robblau/code/tests/tk-multi-jpegapp,
-          type: dev}
       tk-multi-launch3dsmax: '@launch_3dsmax'
       tk-multi-launchflame: '@launch_flame'
       tk-multi-launchflameassist: '@launch_flame_assist'
@@ -174,7 +171,6 @@ engines:
     compatibility_dialog_min_version: 2015
     debug_logging: false
     location: {name: tk-maya, type: app_store, version: v0.4.2}
-    # location: {name: tk-maya, type: dev, path: '/Users/robblau/code/work/tk-maya'}
     menu_favourites:
     - {app_instance: tk-multi-workfiles, name: Shotgun File Manager...}
     template_project:
@@ -237,12 +233,6 @@ engines:
         versions: []
         windows_args: ''
         windows_path: ''
-      # tk-field-driver:
-      #   location: {name: tk-fields-driver, type: dev, path: /Users/robblau/code/tests/field_driver}
-      # tk-menu-driver:
-      #   location: {name: tk-menu-driver, type: dev, path: /Users/robblau/code/tests/menu_driver}
-      # tk-delegate-driver:
-      #   location: {name: tk-delegate-driver, type: dev, path: /Users/robblau/code/tests/delegate_driver}
       tk-multi-screeningroom: '@launch_screeningroom'
     location: {name: tk-shell, type: app_store, version: v0.4.0}
   tk-softimage:

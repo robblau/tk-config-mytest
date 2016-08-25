@@ -26,22 +26,13 @@ std_flame_flare:
       settings_hook: '{self}/settings.py'
       shotgun_entity_type: Sequence
       task_template: ''
-    tk-multi-shotgunpanel:
-      action_mappings:
-        Task:
-        - actions: [assign_task]
-          filters: {}
-        Version:
-        - actions: [play_in_rv]
-          filters: {}
-      actions_hook: '{self}/tk-shell_actions.py'
-      location: {name: tk-multi-shotgunpanel, path: /Users/robblau/code/work/tank/tk-multi-shotgunpanel,
-        type: dev}
-      shotgun_fields_hook: '{self}/shotgun_fields.py'
   backburner_shared_tmp: /tmp
   debug_logging: true
   flame_batch_publish_type: Flame Batch File
-  location: {name: tk-flame, path: /Users/robblau/code/work/tank/tk-flame, type: dev}
+  location:
+    version: v1.7.0
+    type: app_store
+    name: tk-flame
   project_startup_hook: '{self}/project_startup.py'
   run_at_startup:
   - {app_instance: tk-multi-shotgunpanel, name: ''}
