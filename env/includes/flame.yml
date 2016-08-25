@@ -1,0 +1,47 @@
+std_flame_flare:
+  apps:
+    tk-flame-export:
+      batch_publish_type: Flame Batch File
+      batch_template: flame_shot_batch
+      bypass_shotgun_transcoding: false
+      location: {name: tk-flame-export, type: app_store, version: v1.5.1}
+      menu_name: Shotgun Shot Export
+      plate_presets:
+      - {batch_quicktime_template: null, batch_render_template: null, name: 10 bit
+          DPX, publish_type: Flame Render, quicktime_publish_type: Flame Quicktime,
+        quicktime_template: null, template: flame_shot_render_dpx, upload_quicktime: true}
+      - {batch_quicktime_template: null, batch_render_template: null, name: 16 bit
+          OpenEXR, publish_type: Flame Render, quicktime_publish_type: Flame Quicktime,
+        quicktime_template: null, template: flame_shot_render_exr, upload_quicktime: true}
+      segment_clip_template: flame_segment_clip
+      settings_hook: '{self}/settings.py'
+      shot_clip_template: flame_shot_clip
+      shot_parent_entity_type: Sequence
+      shot_parent_link_field: sg_sequence
+      shot_parent_task_template: ''
+      task_template: Basic shot template
+    tk-flame-review:
+      location: {name: tk-flame-review, type: app_store, version: v1.0.5}
+      menu_name: Submit for Shotgun review
+      settings_hook: '{self}/settings.py'
+      shotgun_entity_type: Sequence
+      task_template: ''
+    tk-multi-shotgunpanel:
+      action_mappings:
+        Task:
+        - actions: [assign_task]
+          filters: {}
+        Version:
+        - actions: [play_in_rv]
+          filters: {}
+      actions_hook: '{self}/tk-shell_actions.py'
+      location: {name: tk-multi-shotgunpanel, path: /Users/robblau/code/work/tank/tk-multi-shotgunpanel,
+        type: dev}
+      shotgun_fields_hook: '{self}/shotgun_fields.py'
+  backburner_shared_tmp: /tmp
+  debug_logging: true
+  flame_batch_publish_type: Flame Batch File
+  location: {name: tk-flame, path: /Users/robblau/code/work/tank/tk-flame, type: dev}
+  project_startup_hook: '{self}/project_startup.py'
+  run_at_startup:
+  - {app_instance: tk-multi-shotgunpanel, name: ''}
